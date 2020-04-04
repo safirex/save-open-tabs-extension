@@ -1,0 +1,12 @@
+{
+  "name": "save-open-tabs",
+  "version": "1.2.1",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:linux": "zip -r -FS ../save-open-tabs-extension.zip * -x \"*.git*\" README.md"
+  },
+  "keywords": [],
+  "author": "Max Tedjojuwono",
+  "license": "ISC"
+}
