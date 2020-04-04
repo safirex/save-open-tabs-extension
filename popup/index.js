@@ -76,7 +76,7 @@ const displayList = () => {
 saveBtn.onclick = () => {
 	browser.storage.local.get('savedTabs')
 		.then(({ savedTabs }) => {
-			browser.tabs.query({})
+			browser.tabs.query({currentWindow:true})
 				.then((tabs) => {
 					const newTabs = tabs
 						.filter(({ url }) => url.slice(0, 5) !== 'about')
@@ -120,6 +120,8 @@ clearBtn.onclick = () => {
 openBtn.onclick = () => {
 	async function openNewTab (tmp) {
 		return await browser.tabs.create({
+			active:false,
+			discarded:true,
 			url: tmp
 		})
 	}
